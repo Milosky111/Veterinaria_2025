@@ -10,11 +10,7 @@ Permite gestionar **mascotas, citas y servicios**, con una interfaz web intuitiv
 - [Descripción](#descripción)
 - [Tecnologías](#tecnologías)
 - [Estructura de Carpetas](#estructura-de-carpetas)
-- [Instalación](#instalación)
-- [Ejecutar el proyecto](#ejecutar-el-proyecto)
-- [Versionado](#versionado)
-- [Cómo colaborar](#cómo-colaborar)
-- [Licencia](#licencia)
+- [Historial de versiones](#Historial-de-versiones)
 
 ---
 
@@ -70,3 +66,8 @@ package-lock.json
 package.json
 READEME.md
 vite.config.js
+
+## Historial de versiones
+
+v0.1: Creacion del proyecto.
+v0.2: Creacion de formularios, mejoras menores.
