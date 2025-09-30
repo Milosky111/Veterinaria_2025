@@ -1,4 +1,4 @@
-function Home (){
+function FichaIngreso (){
     return(
 <html lang="en">
 <head>
@@ -18,4 +18,4 @@ function Home (){
 
 
 
-export default Home;
+export default FichaIngreso;
