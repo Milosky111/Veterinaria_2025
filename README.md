@@ -1,5 +1,5 @@
 
-# Proyecto Veterinaria v0.1  
+# Proyecto Veterinaria
 Este repositorio contiene el proyecto de un sistema de gestión para una **veterinaria**, desarrollado con **React**, **Vite** y **Firebase**.  
 Permite gestionar **mascotas, citas y servicios**, con una interfaz web intuitiva y almacenamiento en la nube mediante Firebase.
 
@@ -10,7 +10,7 @@ Permite gestionar **mascotas, citas y servicios**, con una interfaz web intuitiv
 - [Descripción](#descripción)
 - [Tecnologías](#tecnologías)
 - [Estructura de Carpetas](#estructura-de-carpetas)
-- [Historial de versiones](#Historial-de-versiones)
+- [Historial de versiones](#historial-de-versiones)
 
 ---
 
@@ -66,8 +66,10 @@ package-lock.json
 package.json
 READEME.md
 vite.config.js
+```
 
 ## Historial de versiones
 
-v0.1: Creacion del proyecto.
-v0.2: Creacion de formularios, mejoras menores.
+- **v0.1: Creacion del proyecto.
+- **v0.2: Creacion de formularios, mejoras menores.
+- **v0.3: Creacion de formulario cliente y separacion por componentes.

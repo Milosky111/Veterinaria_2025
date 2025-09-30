@@ -2,7 +2,7 @@ import { useState } from "react";
 import Swal from "sweetalert2";
 import { agregarFichaClinica } from "../services/firebase";
 
-export default function FichaIngreso({ clienteID, mascotaID }) {
+export default function IngresoMascota({clienteID, mascotaID}) {
   const [nombreMascota, setNombreMascota] = useState("");
   const [especie, setEspecie] = useState("");
   const [raza, setRaza] = useState("");
@@ -44,7 +44,7 @@ export default function FichaIngreso({ clienteID, mascotaID }) {
 
   return (
     <div className="container mt-4">
-      <h2>Ficha Clínica de Ingreso</h2>
+      <h2>Datos de la mascota</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
           <label className="form-label">Nombre Mascota</label>
@@ -80,7 +80,7 @@ export default function FichaIngreso({ clienteID, mascotaID }) {
         </div>
 
         <div className="mb-3">
-          <label className="form-label">Edad</label>
+          <label className="form-label">Edad</label>  {/*CONDICIONAL: LA EDAD SOLO PUEDE SER (+) */}
           <input
             type="number"
             className="form-control"
@@ -91,7 +91,7 @@ export default function FichaIngreso({ clienteID, mascotaID }) {
         </div>
 
         <div className="mb-3">
-          <label className="form-label">Peso (kg)</label>
+          <label className="form-label">Peso (kg)</label> {/*CONDICIONAL: EL PESO SOLO PUEDE SER (+) */}
           <input
             type="number"
             className="form-control"
@@ -119,10 +119,6 @@ export default function FichaIngreso({ clienteID, mascotaID }) {
             onChange={(e) => setObservaciones(e.target.value)}
           />
         </div>
-
-        <button type="submit" className="btn btn-success">
-          Registrar Ficha
-        </button>
       </form>
     </div>
   );
