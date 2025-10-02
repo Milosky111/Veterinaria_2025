@@ -68,9 +68,8 @@ export default function Register() {
             value={tipo}
             onChange={(e) => setTipo(e.target.value)}
           >
-            <option value="cliente">Cliente</option>
-            <option value="empresa">Empresa</option>
-            <option value="admin">Administrador</option>
+            <option value="cliente">Veterinaria</option>
+            <option value="empresa">Asistente</option>
           </select>
         </div>
 

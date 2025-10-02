@@ -1,17 +1,13 @@
 import Navbar from "../components/layout/NavBar";
-import Sidebar from "../components/layout/Sidebar";
 
 const Home = () => {
           
   return (
     <div>
         <Navbar> {Navbar}</Navbar>
-        <Sidebar> {Sidebar}</Sidebar>
         <h1>Inicio</h1>
         <p>Bienvenido a la página principal de tu sistema. Aquí puedes encontrar información relevante para usuarios logueados.</p>
     </div>
-
-
   );
 };
 export default Home;

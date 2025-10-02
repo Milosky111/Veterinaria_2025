@@ -40,3 +40,9 @@
 .read-the-docs {
   color: #888;
 }
+
+@media (min-width: 768px) {
+    .content-wrapper {
+        margin-left: 250px; 
+    }
+}

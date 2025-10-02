@@ -36,36 +36,49 @@ El sistema permite:
 ## Estructura de Carpetas
 
 ```text
-/proyecto_veterinaria
-    /src
-        /assets
-        /components
-            CerrarSesion.jsx
-            FichaIngresoForm.jsx
-        /context
-            AuthConext.js
-            AuthProvider.jsx
-        /pages
-            FichaIngreso.jsx
-            Home.jsx
-            Login.jsx
-            Register.jsx
-        /routes
-            AppRouter.Jsx
-            ProtecedRoute.jsx
-        /services
-            firebase.js
-            userService.js
-        App.css
-        App.jsx
-        index.css
-        main.jsx
-        router.jsx
-index.html
-package-lock.json
-package.json
-READEME.md
-vite.config.js
+VETERINARIA
+src/
+┣ assets/
+┃ ┣ images/
+┃ ┃ ┗ login.png
+┃ ┗ react.svg
+┣ components/
+┃ ┣ forms/
+┃ ┃ ┣ IngresoCliente.jsx
+┃ ┃ ┗ IngresoMascota.jsx
+┃ ┣ layout/
+┃ ┃ ┣ NavBar.jsx
+┃ ┃ ┗ Sidebar.jsx
+┃ ┣ ui/
+┃ ┃ ┗ ModalBase.jsx
+┃ ┗ CerrarSesion.Jsx
+┣ context/
+┃ ┣ AuthContext.js
+┃ ┗ AuthProvider.jsx
+┣ pages/
+┃ ┣ asistente/
+┃ ┃ ┣ FichaIngreso.jsx
+┃ ┃ ┗ IndexAsistente.jsx
+┃ ┣ shared/
+┃ ┣ veterinario/
+┃ ┃ ┣ IngresoAtencion.jsx
+┃ ┃ ┣ IngresoReceta.jsx
+┃ ┃ ┗ ModificarAtencion.jsx
+┃ ┣ Home.jsx
+┃ ┣ Login.jsx
+┃ ┣ Perfil.jsx
+┃ ┗ Register.jsx
+┣ routes/
+┃ ┣ AppRouter.jsx
+┃ ┗ ProtectedRoute.jsx
+┣ services/
+┃ ┣ firebase.js
+┃ ┗ userService.js
+┣ App.css
+┣ App.jsx
+┣ index.css
+┣ main.jsx
+┗ router.jsx
 ```
 
 ## Historial de versiones
@@ -73,3 +86,4 @@ vite.config.js
 - **v0.1: Creacion del proyecto.
 - **v0.2: Creacion de formularios, mejoras menores.
 - **v0.3: Creacion de formulario cliente y separacion por componentes.
+- **v0.4: Creacion de modal Cliente-Mascota, Sidebar finalizada

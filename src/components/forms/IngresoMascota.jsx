@@ -1,11 +1,13 @@
 import { useState } from "react";
 import Swal from "sweetalert2";
-import { agregarFichaClinica } from "../services/firebase";
+import { agregarFichaClinica } from "../../services/firebase";
 
 export default function IngresoMascota({clienteID, mascotaID}) {
   const [nombreMascota, setNombreMascota] = useState("");
   const [especie, setEspecie] = useState("");
   const [raza, setRaza] = useState("");
+  const [sexo, setSexo] = useState("");
+  const [chip, setChip] = useState("");
   const [edad, setEdad] = useState("");
   const [peso, setPeso] = useState("");
   const [motivo, setMotivo] = useState("");
@@ -19,6 +21,8 @@ export default function IngresoMascota({clienteID, mascotaID}) {
         nombreMascota,
         especie,
         raza,
+        sexo,
+        chip,
         edad,
         peso,
         motivo,
@@ -32,6 +36,8 @@ export default function IngresoMascota({clienteID, mascotaID}) {
       setNombreMascota("");
       setEspecie("");
       setRaza("");
+      setSexo("");
+      setChip("");
       setEdad("");
       setPeso("");
       setMotivo("");
@@ -80,6 +86,27 @@ export default function IngresoMascota({clienteID, mascotaID}) {
         </div>
 
         <div className="mb-3">
+          <label className="form-label">Sexo</label>
+          <input
+            type="text"
+            className="form-control"
+            value={sexo}
+            onChange={(e) => setSexo(e.target.value)}
+            required
+          />
+        </div>
+        <div className="mb-3">
+          <label className="form-label">Chip de identificacion</label>
+          <input
+            type="number"
+            className="form-control"
+            value={chip}
+            onChange={(e) => setChip(e.target.value)}
+            required
+          />
+        </div>        
+
+        <div className="mb-3">
           <label className="form-label">Edad</label>  {/*CONDICIONAL: LA EDAD SOLO PUEDE SER (+) */}
           <input
             type="number"
@@ -119,6 +146,9 @@ export default function IngresoMascota({clienteID, mascotaID}) {
             onChange={(e) => setObservaciones(e.target.value)}
           />
         </div>
+        <button type="submit" className="btn btn-success">
+          Registrar
+        </button>
       </form>
     </div>
   );

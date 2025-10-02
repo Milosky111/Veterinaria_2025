@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Swal from "sweetalert2";
-import { agregarFichaClinica } from "../services/firebase";
+import { agregarFichaClinica } from "../../services/firebase";
 
 export default function IngresoCliente({clienteID, mascotaID}) {
   const [nombreCliente, setNombreCliente] = useState("");
@@ -107,7 +107,7 @@ export default function IngresoCliente({clienteID, mascotaID}) {
           />
         </div>
         <button type="submit" className="btn btn-success">
-          Registrar Ficha
+          Registrar
         </button>
       </form>
     </div>
