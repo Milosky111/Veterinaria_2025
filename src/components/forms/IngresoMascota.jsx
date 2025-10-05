@@ -2,7 +2,7 @@ import { useState } from "react";
 import Swal from "sweetalert2";
 import { agregarFichaClinica } from "../../services/firebase";
 
-export default function IngresoMascota({clienteID, mascotaID}) {
+export default function IngresoMascota({mascotaID}) {
   const [nombreMascota, setNombreMascota] = useState("");
   const [especie, setEspecie] = useState("");
   const [raza, setRaza] = useState("");

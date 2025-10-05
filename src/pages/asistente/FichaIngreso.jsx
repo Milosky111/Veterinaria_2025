@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import IngresoMascota from "../../components/forms/IngresoMascota";
 import IngresoCliente from "../../components/forms/IngresoCliente";
 import Sidebar from "../../components/layout/Sidebar";
@@ -10,58 +10,56 @@ const PASOS = {
 };
 
 function FichaIngreso() {
-    // 1. Estado para controlar la visibilidad del MODAL
     const [mostrarModal, setMostrarModal] = useState(false);
-    // 2. Estado para controlar el flujo de pasos
     const [pasoActual, setPasoActual] = useState(PASOS.CLIENTE);
-    // 3. Estado para guardar el ID del cliente
-    const [clienteId, setClienteId] = useState(null);
+    const [datosCliente, setDatosCliente] = useState(null);
 
-    // --- Funciones del Modal y Flujo ---
     const abrirModal = () => {
         setMostrarModal(true);
-        setPasoActual(PASOS.CLIENTE); // Siempre inicia el flujo en el paso 1
-        setClienteId(null);
+        setPasoActual(PASOS.CLIENTE);
+        setDatosCliente(null);
     };
 
     const cerrarModal = () => {
         setMostrarModal(false);
-        // Opcional: Puedes hacer un reset completo de estados aquí
     };
 
-    const handleClienteIngresado = (newClienteId) => {
-        setClienteId(newClienteId); // Guarda el ID para Pasos 2
-        setPasoActual(PASOS.MASCOTA); // Avanza al paso 2
+    const handleClienteIngresado = (data) => {
+        setDatosCliente(data);
+        setPasoActual(PASOS.MASCOTA);
     };
 
-    const handleMascotaIngresada = () => {
+    const handleMascotaIngresada = (data) => {
+        console.log("Mockup Finalizado. Cliente:", datosCliente, "Mascota:", data);
         alert("Ficha de ingreso completada con éxito!");
-        cerrarModal(); // Cierra el modal al finalizar
+        cerrarModal();
     };
     
-    // Contenido dinámico del Modal
+    const volverACliente = () => {
+        setPasoActual(PASOS.CLIENTE);
+    };
+    
     const ContenidoModal = () => {
         if (pasoActual === PASOS.CLIENTE) {
             return (
                 <IngresoCliente 
-                    onSuccess={handleClienteIngresado}
-                    // Puedes pasar la función de cierre al formulario si quieres un botón de cancelar
+                    onNext={handleClienteIngresado} 
                     onCancel={cerrarModal} 
+                    valoresIniciales={datosCliente}
                 />
             );
         }
         
-        if (pasoActual === PASOS.MASCOTA && clienteId) {
+        if (pasoActual === PASOS.MASCOTA && datosCliente) { 
+            const nombreCliente = datosCliente.nombreCliente || "Cliente";
             return (
                 <>
-                    <p className="alert alert-info">Cliente registrado con ID: {clienteId}. Continúe con los datos de la mascota.</p>
+                    <p className="alert alert-info">Continuando el registro para: **{nombreCliente}**.</p>
                     <IngresoMascota 
-                        clienteID={clienteId} 
-                        onSuccess={handleMascotaIngresada}
+                        onNext={handleMascotaIngresada}
                         onCancel={cerrarModal}
                     />
-                    {/* Botón de regresar opcional */}
-                    <button className="btn btn-secondary btn-sm mt-3" onClick={() => setPasoActual(PASOS.CLIENTE)}>
+                    <button className="btn btn-secondary btn-sm mt-3" onClick={volverACliente}>
                         &larr; Volver a Cliente
                     </button>
                 </>
@@ -70,7 +68,6 @@ function FichaIngreso() {
         return <p>Error en el flujo de pasos.</p>;
     };
 
-    // --- Renderizado Principal de la Página ---
     return (
         <div className="container-fluid">
             <div className="row">
@@ -80,7 +77,6 @@ function FichaIngreso() {
                 <div className="col-md-9 offset-md-3">
                     <h1 className="mt-3">Gestión de Fichas</h1>
                     
-                    {/* Botón para abrir el Modal */}
                     <button 
                         className="btn btn-primary btn-lg mt-4" 
                         onClick={abrirModal}
@@ -88,13 +84,9 @@ function FichaIngreso() {
                         + Ingresar Nueva Ficha (Cliente & Mascota)
                     </button>
                     
-                    <hr className="mt-5"/>
-                    <p>Aquí irá la tabla de clientes/mascotas...</p>
-                    
-                    {/*Renderizado Condicional del Modal*/}
                     {mostrarModal && (
                         <ModalBase 
-                            titulo={`Ficha de Ingreso - Paso: ${pasoActual === PASOS.CLIENTE ? '1/2 Cliente' : '2/2 Mascota'}`}
+                            titulo={`Ficha de Ingreso - Paso: ${pasoActual === PASOS.CLIENTE ? '1/2 Cliente (Mockup)' : '2/2 Mascota (Mockup)'}`}
                             onClose={cerrarModal}
                         >
                             <ContenidoModal />

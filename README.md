@@ -83,7 +83,7 @@ src/
 
 ## Historial de versiones
 
-- **v0.1: Creacion del proyecto.
-- **v0.2: Creacion de formularios, mejoras menores.
-- **v0.3: Creacion de formulario cliente y separacion por componentes.
-- **v0.4: Creacion de modal Cliente-Mascota, Sidebar finalizada
+- v0.1: Creacion del proyecto.
+- v0.2: Creacion de formularios, mejoras menores.
+- v0.3: Creacion de formulario cliente y separacion por componentes.
+- v0.4: Creacion de modal Cliente-Mascota, Sidebar finalizada
